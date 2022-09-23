@@ -8,16 +8,16 @@ namespace BankEncapsulation
 {
     public class BankAccount
     {
-        private double balance = 0;
+        private double _balance = 0;
 
         public void Deposit(double depositAmount)
         {
-            balance += depositAmount;
+            _balance += depositAmount;
         }
 
         public double GetBalance()
         {
-            return balance;
+            return _balance;
         }
     }
 }
