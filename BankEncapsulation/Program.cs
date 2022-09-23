@@ -16,3 +16,19 @@ while (!userDepositValid)
 account1.Deposit(userDepositAmount);
 
 Console.WriteLine($"New Balance: ${account1.GetBalance()}");
+Console.WriteLine();
+
+Console.Write("Please enter withdrawl amount: $");
+
+double userWithrawlAmount;
+var userWithrawlValid = double.TryParse(Console.ReadLine(), out userWithrawlAmount);
+
+while (!userWithrawlValid)
+{
+    Console.Write("Invalid entry. Please enter valid withdrawl amount: $");
+    userWithrawlValid = double.TryParse(Console.ReadLine(), out userWithrawlAmount);
+}
+
+account1.Withdrawl(userWithrawlAmount);
+
+Console.WriteLine($"New Balance: ${account1.GetBalance()}");

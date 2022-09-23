@@ -15,6 +15,11 @@ namespace BankEncapsulation
             _balance += depositAmount;
         }
 
+        public void Withdrawl(double withdrawlAmount)
+        {
+            _balance -= withdrawlAmount;
+        }
+
         public double GetBalance()
         {
             return _balance;
