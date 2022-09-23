@@ -2,11 +2,11 @@
 
 var account1 = new BankAccount();
 
-string userEntry = "1";
+var userEntry = "1";
 while (userEntry == "1")
 {
-    Console.WriteLine("Would you like to make a Deposit or Withdrawl?");
-    Console.Write("(Enter 1 for Deposit or 2 for Withdrawl) ");
+    Console.WriteLine("Would you like to make a deposit, make a withdrawl, or get your balance?");
+    Console.Write("(Enter 1 for Deposit, 2 for Withdrawl, or 3 to Get Balance. Enter any other key to exit.) ");
     userEntry = Console.ReadLine();
     Console.WriteLine();
 
@@ -24,10 +24,7 @@ while (userEntry == "1")
             Console.WriteLine();
         }
 
-        account1.Deposit(userDepositAmount);
-
-        Console.WriteLine($"New Balance: ${account1.GetBalance()}");
-        Console.WriteLine();        
+        account1.Deposit(userDepositAmount);      
     }
     if (userEntry == "2")
     {
@@ -44,10 +41,14 @@ while (userEntry == "1")
         }
 
         account1.Withdrawl(userWithrawlAmount);
-
-        Console.WriteLine($"New Balance: ${account1.GetBalance()}");
+                        
+        userEntry = "1";
+    }
+    if (userEntry == "3")
+    {
+        Console.WriteLine($"Balance: ${account1.GetBalance()}");
         Console.WriteLine();
-                
+
         userEntry = "1";
     }
 }
